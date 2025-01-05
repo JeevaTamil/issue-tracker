@@ -2,7 +2,6 @@
 
 import React from "react";
 import { Button, TextField, TextArea } from "@radix-ui/themes";
-import MarkdownEditor from "@uiw/react-markdown-editor";
 import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
 
