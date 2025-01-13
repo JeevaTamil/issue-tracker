@@ -41,15 +41,12 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
       console.log("Submit handler");
 
       if (issue) {
-        const response = await axios.patch(`/api/issues/${issue.id}`, data);
-        console.log(response.data);
-        router.push("/issues");
-        return;
+        await axios.patch(`/api/issues/${issue.id}`, data);
+      } else {
+        await axios.post("/api/issues", data);
       }
-
-      const response = await axios.post("/api/issues", data);
-      console.log(response.data);
       router.push("/issues");
+      router.refresh();
     } catch (error) {
       setSubmitting(false);
       console.log(error);
